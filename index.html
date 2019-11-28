@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chart example app</title>
+</head>
+<body>
+    <canvas id="popChart" width="600" height="400"></canvas>
+    <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
+    <script>
+        var lineChart = new Chart({
+            type: "line",
+            data: speedData,
+            options: chartOptions
+        });
+        
+        var speedData = {
+  labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
+  datasets: [{
+    label: "Car Speed",
+    data: [0, 59, 75, 20, 20, 55, 40],
+  }]
+};
+ 
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+    </script>
+    
+</body>
+</html>
